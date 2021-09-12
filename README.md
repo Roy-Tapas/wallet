@@ -97,7 +97,7 @@ mnemonic = "12 word mnemonic"
     - Fund a `BTCTEST` address using [this testnet faucet](https://testnet-faucet.mempool.co/).
 
     - Use a [block explorer](https://tbtc.bitaps.com/) to watch transactions on the address.
-    ![btc-blockexplorer](images/tBTC funded.png)
+    ![btc_blockexplorer](images/btc_blockexplorer.PNG)
 
     - Send a transaction to another testnet address (either one of your own, or the faucet's) by firing the following commands 
     ```
@@ -105,11 +105,11 @@ mnemonic = "12 word mnemonic"
     >>> BTCTEST_account = priv_key_to_account(BTCTEST, derive_wallets(mnemonic,BTCTEST,3)[0]['privkey'])
     >>> send_tx(BTCTEST,BTCTEST_account,"<< recipient address >>", 0.00001)
     ```
-    ![btc-test-commands](images/tBTC transfer-Python commands.png)
+    ![btc_commands.PNG](images/btc_commands.PNG)
 
     - Screenshot of confirmation of the transaction looks like the following:
 
-      ![btc-testconfirmation](images/tBTC transferred.png)
+      ![btc-testconfirmation](images/btc_transferred.PNG)
 
     
     ***Similar process can be followed for sending transactions in Ethereum testnet ---- WILL BE UPDATED***
