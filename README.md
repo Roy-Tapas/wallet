@@ -67,7 +67,7 @@ The following dependencies are required for this wallet to work.
 
 - Your "wallet" directory should look something like this:
 
-  ![wallet-dir](Images/wallet-dir.PNG)
+  ![wallet-dir](images/wallet-dir.PNG)
 
 #### Note the following
 - wallet.py is the script used to (a) derive wallet address, private key (b) form raw transactions using web3 or bit libraries for Ethereum and Bitcoin respectively and (c) finally sign and send transactions
@@ -97,7 +97,7 @@ mnemonic = "12 word mnemonic"
     - Fund a `BTCTEST` address using [this testnet faucet](https://testnet-faucet.mempool.co/).
 
     - Use a [block explorer](https://tbtc.bitaps.com/) to watch transactions on the address.
-    ![btc-blockexplorer](Images/tBTC funded.png)
+    ![btc-blockexplorer](images/tBTC funded.png)
 
     - Send a transaction to another testnet address (either one of your own, or the faucet's) by firing the following commands 
     ```
@@ -105,11 +105,11 @@ mnemonic = "12 word mnemonic"
     >>> BTCTEST_account = priv_key_to_account(BTCTEST, derive_wallets(mnemonic,BTCTEST,3)[0]['privkey'])
     >>> send_tx(BTCTEST,BTCTEST_account,"<< recipient address >>", 0.00001)
     ```
-    ![btc-test-commands](Images/tBTC transfer-Python commands.png)
+    ![btc-test-commands](images/tBTC transfer-Python commands.png)
 
     - Screenshot of confirmation of the transaction looks like the following:
 
-      ![btc-testconfirmation](Images/tBTC transferred.png)
+      ![btc-testconfirmation](images/tBTC transferred.png)
 
     
     ***Similar process can be followed for sending transactions in Ethereum testnet ---- WILL BE UPDATED***
