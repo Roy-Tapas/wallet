@@ -1,6 +1,6 @@
 # Multi-Blockchain Wallet in Python
 
-wallet.py is an implementation of multi-crypto asset wallet, that programmatically sends and receives transactions over a blockchain network via virtual wallet that uses the following:
+wallet.py is an implementation of multi-crypto asset wallet, that programmatically sends and receives transactions over blockchain networks via virtual wallet that uses the following:
 - `hd-wallet-derive` command line tool to derive bip32 addresses and private keys for Bitcoin and many altcoins.
 - `web3` module for `Ethereum` and `bit` module for `bitcoin` for the following:
 (1) Convert provate key to account 
@@ -11,7 +11,7 @@ wallet.py is an implementation of multi-crypto asset wallet, that programmatical
 
 ## Dependencies
 
-The following dependencies are required for this assignment and were likely already installed as part of your preparation for in-class activities. 
+The following dependencies are required for this wallet to work. 
 
 > **Important:** If you have _not_ already installed the dependencies listed below, you may do so by following the instructions found in the following guides:
   > - [HD Wallet Derive Installation Guide](Resources/HD_Wallet_Derive_Install_Guide.md) 
@@ -31,9 +31,9 @@ The following dependencies are required for this assignment and were likely alre
 
 ### 1. Project setup
 
-- After cloning the "wallet" repo, and `cd` into "wallet" directory in your local machine.
+- After cloning the "wallet" repo, `cd` into "wallet" directory in your local machine.
 
-- Install PHP and complete `HD Wallt Derive` by following the instructions in  [HD Wallet Derive Installation Guide](Resources/HD_Wallet_Derive_Install_Guide.md) 
+- Install PHP and complete `HD Wallt Derive` by following the instructions in  [HD Wallet Derive Installation Guide](Resources/HD_Wallet_Derive_Install_Guide.md), if not already done.
 
 - Create a symlink called `derive` for the `hd-wallet-derive/hd-wallet-derive.php` script. This will clean up the command needed to run the script in our code, as we can call `./derive` instead of `./hd-wallet-derive/hd-wallet-derive.php`: 
 
@@ -67,7 +67,7 @@ The following dependencies are required for this assignment and were likely alre
 
 - Your "wallet" directory should look something like this:
 
-  ![wallet-directory](Images/wallet-dir.png)
+  ![wallet-dir](Images/wallet-dir.PNG)
 
 #### Note the following
 - wallet.py is the script used to (a) derive wallet address, private key (b) form raw transactions using web3 or bit libraries for Ethereum and Bitcoin respectively and (c) finally sign and send transactions
@@ -87,7 +87,6 @@ mnemonic = "12 word mnemonic"
 
 ## ALL ENVIRONMENT SETUPS ARE NOW COMPLETE. LET'S NOW SEND SOME TRANSACTIONS BY CALLING FUNCTIONS DEFINED IN wallet.py
 
-- Now, you should be able to fund these wallets using testnet faucets. 
 - Open up a new terminal window inside of `wallet`.
 - Then run the command `python` to open the Python shell. 
 - Within the Python shell, run the command `from wallet import *`. This will allow you to access the functions in `wallet.py` interactively.
@@ -101,9 +100,11 @@ mnemonic = "12 word mnemonic"
     ![btc-blockexplorer](Images/tBTC funded.png)
 
     - Send a transaction to another testnet address (either one of your own, or the faucet's) by firing the following commands 
+    ```
     >>> derive_wallets(mnemonic,BTCTEST,3)
     >>> BTCTEST_account = priv_key_to_account(BTCTEST, derive_wallets(mnemonic,BTCTEST,3)[0]['privkey'])
     >>> send_tx(BTCTEST,BTCTEST_account,"<< recipient address >>", 0.00001)
+    ```
     ![btc-test-commands](Images/tBTC transfer-Python commands.png)
 
     - Screenshot of confirmation of the transaction looks like the following:
